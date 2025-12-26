@@ -876,9 +876,12 @@ def couq():
     data = from_memberships(
         [[millet for millet in millet_sets if trait in millet_sets[millet]] for trait in set.union(*millet_sets.values())]
     )
+    
+    plt.figure(figsize=(8, 6))   # create current figure
     upset = UpSet(data, subset_size='count', show_counts=True)
-    fig = upset.plot()
-    st.pyplot(fig)
+    upset.plot()                 # draws on current figure
+    st.pyplot(plt.gcf())         # get current figure
+    plt.close())
 
     # --- Common to all 4 LABs ---
     common_4 = set.intersection(*millet_sets.values())
