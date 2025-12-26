@@ -881,7 +881,7 @@ def couq():
     upset = UpSet(data, subset_size='count', show_counts=True)
     upset.plot()                 # draws on current figure
     st.pyplot(plt.gcf())         # get current figure
-    plt.close())
+    plt.close()
 
     # --- Common to all 4 LABs ---
     common_4 = set.intersection(*millet_sets.values())
