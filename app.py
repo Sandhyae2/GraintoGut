@@ -878,7 +878,7 @@ def couq():
     )
     
     plt.figure(figsize=(8, 6))   # create current figure
-    upset = UpSet(data, subset_size='count', show_counts=True)
+    upset = UpSet(data, subset_size='count', show_counts=False)
     upset.plot()                 # draws on current figure
     st.pyplot(plt.gcf())         # get current figure
     plt.close()
