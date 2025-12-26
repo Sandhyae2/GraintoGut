@@ -876,9 +876,8 @@ def couq():
     data = from_memberships(
         [[millet for millet in millet_sets if trait in millet_sets[millet]] for trait in set.union(*millet_sets.values())]
     )
-    fig = plt.figure(figsize=(8,6))
     upset = UpSet(data, subset_size='count', show_counts=True)
-    upset.plot(fig=fig)  # pass the figure explicitly
+    fig = upset.plot()
     st.pyplot(fig)
 
     # --- Common to all 4 LABs ---
