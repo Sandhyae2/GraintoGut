@@ -840,9 +840,11 @@ def couq():
         So:
         - A **tall bar with all dots connected** = Many **core shared traits**
         - A **tall bar with only one dot** = Many **unique traits for that strain**
+
+        ---
+        
         ### 3) Left Horizontal Bars (Side Panel)
         The **bars on the left side of the plot** indicate the **total number of traits per millet strain**.
-        
         """)
 
     st.write('')
@@ -863,7 +865,6 @@ def couq():
         millet_sets[strain_name] = combined_traits
 
     from upsetplot import UpSet, from_memberships
-   
 
     # millet_sets: dict of millet_name -> set of traits
     memberships = []
@@ -875,19 +876,17 @@ def couq():
     data = from_memberships(
         [[millet for millet in millet_sets if trait in millet_sets[millet]] for trait in set.union(*millet_sets.values())]
     )
-    
     fig = plt.figure(figsize=(8,6))
     upset = UpSet(data, subset_size='count', show_counts=True)
     upset.plot(fig=fig)  # pass the figure explicitly
     st.pyplot(fig)
 
-
     # --- Common to all 4 LABs ---
     common_4 = set.intersection(*millet_sets.values())
     st.markdown(f"<h5 style='text-align:center;'>Traits Common to All 4 Millets</h5>", unsafe_allow_html=True)
     st.dataframe(pd.DataFrame({"Trait": sorted(common_4)}))
-
-    # --- Unique to each LAB ---
+    
+    #copy this #########################################################
     unique_rows = []
     for millet, traits in millet_sets.items():
         # union of all traits in *other* millets
@@ -895,7 +894,7 @@ def couq():
         unique_traits = traits - other_traits  # traits found only in this millet
         for trait in sorted(unique_traits):
             unique_rows.append({"Millet": millet, "Trait": trait})
-    
+    #################################################################
     st.markdown(f"<h5 style='text-align:center;'>Unique Traits</h5>", unsafe_allow_html=True)
     st.dataframe(pd.DataFrame(unique_rows))
     
