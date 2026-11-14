@@ -11,7 +11,7 @@ st.set_page_config(layout="wide",page_icon="🌾")
 st.markdown("""
 <style>
 .stApp {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG_84k6VHPMm65-ssJC1z8JSZdBAAZEzWD0jA1evxlew&s=10');
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/675/45/260/field-ear-millet-wallpaper-preview.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
