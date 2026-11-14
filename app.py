@@ -20,8 +20,8 @@ st.markdown("""
 }
 .block-container {
     padding-top: 2rem;
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 h2, h1 {
     text-align: center !important;
@@ -869,22 +869,54 @@ def couq():
 
     from upsetplot import UpSet, from_memberships
 
-    # millet_sets: dict of millet_name -> set of traits
-    memberships = []
-    for millet, traits in millet_sets.items():
-        for trait in traits:
-            memberships.append((trait, millet))
-    
-    # Create the UpSet data
-    data = from_memberships(
-        [[millet for millet in millet_sets if trait in millet_sets[millet]] for trait in set.union(*millet_sets.values())]
-    )
-    
-    plt.figure(figsize=(8, 6))   # create current figure
-    upset = UpSet(data, subset_size='count', show_counts=False)
-    upset.plot()                 # draws on current figure
-    st.pyplot(plt.gcf())         # get current figure
-    plt.close()
+    all_traits = set().union(*millet_sets.values())
+
+    if not all_traits:
+        st.warning("No traits available to generate the UpSet plot.")
+
+    else:
+       # Create membership list
+        membership_list = [
+            [
+                millet
+                for millet, traits in millet_sets.items()
+                if trait in traits
+            ]
+            for trait in sorted(all_traits, key=str)
+        ]
+
+        # Remove empty memberships
+        membership_list = [
+            membership for membership in membership_list
+            if membership
+        ]
+
+        if not membership_list:
+            st.warning("No valid trait combinations available.")
+
+        else:
+            # Create UpSet data
+            data = from_memberships(
+                membership_list,
+                data=[1] * len(membership_list)
+            )
+
+            # Generate UpSet plot
+            upset = UpSet(
+                data,
+                subset_size="sum",
+                show_counts=False,
+                facecolor="black",
+                sort_by="cardinality"
+            )
+
+            fig = plt.figure(figsize=(12, 8))
+            upset.plot(fig=fig)
+
+            # Render plot
+            st.pyplot(fig)
+
+            plt.close(fig)
 
     # --- Common to all 4 LABs ---
     common_4 = set.intersection(*millet_sets.values())
