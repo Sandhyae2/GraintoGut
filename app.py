@@ -13,7 +13,10 @@ st.markdown("""
 .stApp {
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WggrkKslbCl8qdzftPhJ39ltCMGT0V2sbC0TD3D0BQ&s=10');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     background-attachment: fixed;
+    min-height:100vh;
 }
 .block-container {
     padding-top: 2rem;
