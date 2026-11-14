@@ -11,7 +11,7 @@ st.set_page_config(layout="wide",page_icon="🌾")
 st.markdown("""
 <style>
 .stApp {
-    background-image: url('https://c4.wallpaperflare.com/wallpaper/675/45/260/field-ear-millet-wallpaper-preview.jpg');
+    background-image: url('https://img.freepik.com/premium-vector/paddy-rice-field-background_267448-280.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
