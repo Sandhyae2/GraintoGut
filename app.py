@@ -11,7 +11,7 @@ st.set_page_config(layout="wide",page_icon="🌾")
 st.markdown("""
 <style>
 .stApp {
-    background-image: url('https://media.istockphoto.com/id/509347845/photo/wheat-ears-isolated-on-a-white-background.jpg?s=612x612&w=0&k=20&c=zihWEQeKpEHkfb1laVkbtcHYb3f28X5ZxBu0S364FUw=');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuwFanSFoaqCJ0pwMNaLU6P2yFisN9EEMjI_pFa7wBEw&s=10');
     background-size: cover;
     background-attachment: fixed;
 }
