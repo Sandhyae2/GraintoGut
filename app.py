@@ -11,7 +11,7 @@ st.set_page_config(layout="wide",page_icon="🌾")
 st.markdown("""
 <style>
 .stApp {
-    background-image: url('https://img.magnific.com/free-photo/lifestyle-summer-scene-with-cartoon-design_23-2151068404.jpg?semt=ais_hybrid&w=740&q=80');
+    background-image: url('https://img.magnific.com/premium-vector/vibrant-wheat-fields-cartoon-vector-illustration-white-background_1316704-42479.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
