@@ -11,7 +11,7 @@ st.set_page_config(layout="wide",page_icon="🌾")
 st.markdown("""
 <style>
 .stApp {
-    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20240401/pngtree-close-up-millet-or-sorghum-in-field-image_15644535.jpg');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG_84k6VHPMm65-ssJC1z8JSZdBAAZEzWD0jA1evxlew&s=10');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
