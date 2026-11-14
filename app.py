@@ -11,7 +11,7 @@ st.set_page_config(layout="wide",page_icon="🌾")
 st.markdown("""
 <style>
 .stApp {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WggrkKslbCl8qdzftPhJ39ltCMGT0V2sbC0TD3D0BQ&s=10');
+    background-image: url('https://img.magnific.com/free-photo/lifestyle-summer-scene-with-cartoon-design_23-2151068404.jpg?semt=ais_hybrid&w=740&q=80');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
